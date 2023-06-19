@@ -57,6 +57,11 @@ const App: FC = () => {
     setTasks(updatedTasks);
   };
 
+  let completedCount : number = 0;
+  tasks.forEach((task) => {
+    if (task.completed) completedCount++;
+  })
+
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -70,10 +75,10 @@ const App: FC = () => {
           }}
         >
           <Typography sx={{ ml: 2 }} variant="h4">
-            All
+            Todos
           </Typography>
           <Typography sx={{ ml: 2, mt: 1 }} variant="body1">
-            0 Completed
+            {completedCount} Completed
           </Typography>
           <List sx={{ width: "100%", bgcolor: "background.paper", mt: 2 }}>
             {tasks.map((task: ITask) => (
@@ -87,8 +92,8 @@ const App: FC = () => {
                 />
               </ListItemIcon>
               <TextField
+                sx={{ width: "100%" }}
                 id="new-task-text-field"
-                placeholder="Add new task"
                 variant="standard"
                 value={newTask}
                 onChange={newTaskOnChange}
