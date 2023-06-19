@@ -1,3 +1,5 @@
+https://github.com/chloeckim/todo-app/assets/98069629/ad5fed58-8bee-4bc0-8e59-0fa86822fb75
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
